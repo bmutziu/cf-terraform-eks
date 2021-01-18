@@ -1,6 +1,6 @@
 variable "region" {
   type    = string
-  default = "us-east-1"
+  default = "eu-west-1"
 }
 
 variable "cluster_name" {
@@ -10,12 +10,12 @@ variable "cluster_name" {
 
 variable "k8s_version" {
   type = string
-  default = "1.17"
+  default = "1.18"
 }
 
 variable "release_version" {
   type    = string
-  default = "1.17.12-20201117"
+  default = "1.18.9-20210112"
 }
 
 variable "min_node_count" {
@@ -30,11 +30,11 @@ variable "max_node_count" {
 
 variable "machine_type" {
   type    = string
-  default = "t2.medium"
+  default = "t2.small"
 }
 
 variable "destroy" {
   type    = bool
-  default = true
+  default = false
 }
 
