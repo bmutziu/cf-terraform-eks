@@ -10,23 +10,23 @@ steps:
     revision: "${{CF_BRANCH}}"
     stage: prepare
   init:
-    image: hashicorp/terraform:0.13.0
+    image: hashicorp/terraform:0.14.4
     title: Initializing Terraform
     stage: apply
     commands:
       - terraform init
   plan:
-    image: hashicorp/terraform:0.13.0
+    image: hashicorp/terraform:0.14.4
     title: Outputting Terraform plan
     stage: apply
     commands:
       - terraform plan
   apply:
-    image: hashicorp/terraform:0.13.0
+    image: hashicorp/terraform:0.14.4
     title: Applying Terraform
     stage: apply
     commands:
-      - terraform apply -auto-approve 
+      - terraform apply -auto-approve
     when:
       branch:
         only:
