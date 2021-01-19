@@ -23,9 +23,9 @@ steps:
     stage: apply
     commands:
       - terraform apply -auto-approve
-      - export CLUSTER_NAME=devops-catalog
-      - export REGION=eu-west-1
-      - export DESTROY=$(terraform output destroy)
+      - export CLUSTER_NAME=$(terraform -raw output cluster_name)
+      - export REGION=$(terraform -raw output region)
+      - export DESTROY=$(terraform -raw output destroy)
       - cf_export CLUSTER_NAME REGION DESTROY
     when:
       branch:
