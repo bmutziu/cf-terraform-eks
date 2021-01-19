@@ -23,9 +23,9 @@ steps:
     stage: apply
     commands:
       - terraform apply -auto-approve
-      - export CLUSTER_NAME=$(terraform -raw output cluster_name)
-      - export REGION=$(terraform -raw output region)
-      - export DESTROY=$(terraform -raw output destroy)
+      - export CLUSTER_NAME=$(terraform output -raw cluster_name)
+      - export REGION=$(terraform output -raw region)
+      - export DESTROY=$(terraform output -raw destroy)
       - cf_export CLUSTER_NAME REGION DESTROY
     when:
       branch:
