@@ -23,8 +23,8 @@ steps:
     stage: apply
     commands:
       - terraform apply -auto-approve
-      - export CLUSTER_NAME=$(terraform output -json | jq -r .cluster_name.value)
-      - export REGION=$(terraform output -json | jq -r .region.value)
+      - export CLUSTER_NAME=devops-catalog
+      - export REGION=eu-west-1
       - export DESTROY=$(terraform output destroy)
       - cf_export CLUSTER_NAME REGION DESTROY
     when:
